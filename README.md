@@ -17,7 +17,8 @@ All other graphics created from a picture taken from my G&W Mario's Cement Facto
 All sounds recorded from a playing session with my G&W Mario's Cement Factory.
 [ Yes, my G&W Mario's Cement Factory handheld is still working !]
 
-The game is created using devkitpro: https://devkitpro.org/. Good introduction tutorials to using devkitpro and DS programming: https://patater.com/files/projects/manual/manual.html
+The game is created using devkitpro: https://devkitpro.org/. 
+Good introduction tutorials to using devkitpro and DS programming: https://patater.com/files/projects/manual/manual.html
 
 === HOW TO INSTALL AND START THE GAME USING THE DS WITH R4DS ===
 
@@ -25,6 +26,7 @@ It is as simple as putting the mariocement.nds on the SD card.
 Put the SD card back in the R4DS card.
 Put the R4DS card back in the Nintendo DS.
 Start the Mario's Cement Factory homebrew application.
+
 === FILE INFORMATION ===
 
 Folder - audio: contains all the sounds.
