@@ -1,0 +1,1 @@
+cartfull.o: cartfull.s

@@ -1,0 +1,1 @@
+marioelevatorleft.o: marioelevatorleft.s

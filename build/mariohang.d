@@ -1,0 +1,1 @@
+mariohang.o: mariohang.s

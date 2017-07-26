@@ -1,0 +1,1 @@
+marioelevatorright.o: marioelevatorright.s

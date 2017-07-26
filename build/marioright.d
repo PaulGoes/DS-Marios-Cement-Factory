@@ -1,0 +1,1 @@
+marioright.o: marioright.s

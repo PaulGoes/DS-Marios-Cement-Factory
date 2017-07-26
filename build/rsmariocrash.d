@@ -1,0 +1,1 @@
+rsmariocrash.o: rsmariocrash.s

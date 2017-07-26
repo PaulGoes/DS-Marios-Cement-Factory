@@ -1,0 +1,1 @@
+mariosilorightclosed.o: mariosilorightclosed.s

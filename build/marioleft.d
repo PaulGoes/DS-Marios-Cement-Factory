@@ -1,0 +1,1 @@
+marioleft.o: marioleft.s

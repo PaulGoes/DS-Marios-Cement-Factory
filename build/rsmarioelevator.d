@@ -1,0 +1,1 @@
+rsmarioelevator.o: rsmarioelevator.s

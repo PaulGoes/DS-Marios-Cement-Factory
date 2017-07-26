@@ -1,0 +1,1 @@
+mariocrashbottom.o: mariocrashbottom.s

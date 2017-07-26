@@ -1,0 +1,1 @@
+mariocrashtop.o: mariocrashtop.s

@@ -1,0 +1,1 @@
+mariosilorightopen.o: mariosilorightopen.s

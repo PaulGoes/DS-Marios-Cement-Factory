@@ -1,0 +1,1 @@
+rsmariohang.o: rsmariohang.s

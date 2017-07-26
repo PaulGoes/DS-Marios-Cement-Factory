@@ -1,0 +1,1 @@
+rsmario.o: rsmario.s

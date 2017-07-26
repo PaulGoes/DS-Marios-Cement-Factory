@@ -1,0 +1,1 @@
+handlerightup.o: handlerightup.s

@@ -1,0 +1,1 @@
+mariosiloleftopen.o: mariosiloleftopen.s
