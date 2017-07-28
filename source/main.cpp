@@ -609,8 +609,8 @@ int cart_randomizer() {
 		case 4: 
 			numerator = 2; denominator = 5;	break; /* 2 on 5 - 40% chance cart full */
 		case 5:
-		case 6:
 			numerator = 1; denominator = 2;	break; /* 1 on 2 - 50% chance cart full */	
+		case 6:	
 		case 7:	
 			numerator = 3; denominator = 5;	break; /* 3 on 5 - 60% chance cart full */	
 		default:
@@ -1734,6 +1734,7 @@ int main() {
 				if( (game_level == 4) && (game_score >= 128) ) game_level = 5;
 				if( (game_level == 5) && (game_score >= 192) ) game_level = 6;
 				if( (game_level == 6) && (game_score >= 256) ) game_level = 7;
+				if( (game_level == 7) && (game_score >= 320) ) game_level = 8;
 			}
 			
 			/* end game */
