@@ -310,6 +310,7 @@ int mario_position_old;
 int game_score;
 int game_score_old;
 int game_level;
+int game_score_counter;
 
 bool elevator_left[5];
 bool elevator_right[5];
@@ -479,9 +480,9 @@ void display_jpeg(pngimg png, int x_pos, int y_pos) {
 void display_score(int score) {
 
 	int score_1, score_10, score_100, score_1000;
-
+	
 	/* play sound */
-	mmEffect( SFX_SCORE );
+	mmEffect( SFX_SCORE );	
 	
 	/* display units */
 	score_1 = score % 10;
@@ -553,19 +554,6 @@ void display_score(int score) {
 		}
 	}
 }
-
-
-void update_score( int old_score, int new_score ) {
-	
-	int score;
-	
-	/* increment score until new score and display intermediate scores */
-	for( score = old_score; score <= new_score; score++) {
-		display_score( score );
-		sleepwait(100000);
-	}
-}
-
 
 bool elevator_randomizer() {
 
@@ -1029,10 +1017,10 @@ void display_cart( int side ) {
 				if( cart_left.status == CARTEMPTY ) {
 					display_jpeg(img_cartempty, cart_pos_map[2][0], cart_pos_map[2][1]);
 				}
-				/* full cart */
+				/* full cart is dumping so display empty */
 				else
 				{
-					display_jpeg(img_cartfull, cart_pos_map[2][0], cart_pos_map[2][1]);
+					display_jpeg(img_cartempty, cart_pos_map[2][0], cart_pos_map[2][1]);
 				}
 				break;
 		}
@@ -1080,10 +1068,10 @@ void display_cart( int side ) {
 				if( cart_right.status == CARTEMPTY ) {
 					display_jpeg(img_cartempty, cart_pos_map[2][2], cart_pos_map[2][3]);
 				}
-				/* full cart */
+				/* full cart is dumping so display empty */
 				else
 				{
-					display_jpeg(img_cartfull, cart_pos_map[2][2], cart_pos_map[2][3]);
+					display_jpeg(img_cartempty, cart_pos_map[2][2], cart_pos_map[2][3]);
 				}
 				break;
 		}
@@ -1199,14 +1187,13 @@ void move_cart( int side ) {
 			display_jpeg(img_dump1, dump_pos_map[0][0], dump_pos_map[0][1]); 
 			display_jpeg(img_valvecart, valvecart_pos_map[0][0], valvecart_pos_map[0][1]);
 			
+			cement_status[SILOLEFTTOP][0] = TRUE;
 		}
 		
 		/* full cart in last position */
 		if( (cart_left.position == 3 ) && (cart_left.status == CARTFULL) )  {
 		
-			display_jpeg(img_rsvalvecart, valvecart_pos_map[0][0], valvecart_pos_map[0][1]);
-			
-			cement_status[SILOLEFTTOP][0] = TRUE;
+			display_jpeg(img_rsvalvecart, valvecart_pos_map[0][0], valvecart_pos_map[0][1]);	
 		}
 		
 		/* cart in last position */
@@ -1215,7 +1202,6 @@ void move_cart( int side ) {
 			/* introduce new cart at first position */
 			cart_left.position = 0;
 			cart_left.status = cart_randomizer();
-			
 		}
 		
 		display_cart( LEFT );
@@ -1233,14 +1219,14 @@ void move_cart( int side ) {
 		
 			display_jpeg(img_dump1, dump_pos_map[3][0], dump_pos_map[3][1]); 
 			display_jpeg(img_valvecart, valvecart_pos_map[1][0], valvecart_pos_map[1][1]);
+			
+			cement_status[SILORIGHTTOP][0] = TRUE;	
 		}
 		
 		/* full cart in last position */
 		if( (cart_right.position == 3 ) && (cart_right.status == CARTFULL) )  {
 		
 			display_jpeg(img_rsvalvecart, valvecart_pos_map[1][0], valvecart_pos_map[1][1]);
-			
-			cement_status[SILORIGHTTOP][0] = TRUE;	
 		}
 		
 		/* cart in last position */
@@ -1249,7 +1235,6 @@ void move_cart( int side ) {
 			/* introduce new cart at first position */
 			cart_right.position = 0;
 			cart_right.status = cart_randomizer();
-			
 		}
 		
 		display_cart( RIGHT );
@@ -1314,9 +1299,7 @@ void signal_silofull() {
 
 	/* sound if silo is almost full */
 	if( (cement_status[0][1] == TRUE) && (cement_status[0][2] == TRUE) && (cement_status[0][3] == TRUE) ) signal = TRUE;
-	if( (cement_status[1][1] == TRUE) && (cement_status[1][2] == TRUE) && (cement_status[1][3] == TRUE) ) signal = TRUE;
 	if( (cement_status[2][1] == TRUE) && (cement_status[2][2] == TRUE) && (cement_status[2][3] == TRUE) ) signal = TRUE;
-	if( (cement_status[3][1] == TRUE) && (cement_status[3][2] == TRUE) && (cement_status[3][3] == TRUE) ) signal = TRUE;
 	
 	if( signal == TRUE ) mmEffect( SFX_SCORE );
 
@@ -1434,9 +1417,8 @@ void check_action() {
 					cement_status[SILOLEFTTOP][3] = FALSE; display_cement( SILOLEFTTOP );
 					
 					/* update score */
-					game_score_old = game_score;
 					game_score = game_score + 1;
-					update_score( game_score_old, game_score );
+					display_score( game_score );
 					
 					cement_status[SILOLEFTBOTTOM][0] = TRUE;
 				}
@@ -1458,9 +1440,8 @@ void check_action() {
 					cement_status[SILORIGHTTOP][3] = FALSE; display_cement( SILORIGHTTOP );
 					
 					/* update score */
-					game_score_old = game_score;
 					game_score = game_score + 1;
-					update_score( game_score_old, game_score );
+					display_score( game_score );
 					
 					cement_status[SILORIGHTBOTTOM][0] = TRUE;
 				}
@@ -1482,14 +1463,14 @@ void check_action() {
 					cement_status[SILOLEFTBOTTOM][3] = FALSE; display_cement( SILOLEFTBOTTOM );
 					
 					/* update score */
-					game_score_old = game_score;
-					game_score = game_score + 3;
-					update_score( game_score_old, game_score );
+					game_score = game_score + 1;
+					display_score( game_score );
+					game_score_counter = 1;
 				}
 		
 				break;
 
-			/* handle silo left bottom */
+			/* handle silo right bottom */
 			case 18:
 				
 				/* open the valve */
@@ -1504,9 +1485,9 @@ void check_action() {
 					cement_status[SILORIGHTBOTTOM][3] = FALSE; display_cement( SILORIGHTBOTTOM );
 					
 					/* update score */
-					game_score_old = game_score;
-					game_score = game_score + 3;
-					update_score( game_score_old, game_score );
+					game_score = game_score + 1;
+					display_score( game_score );
+					game_score_counter = 1;
 				}
 		
 				break;	
@@ -1573,7 +1554,25 @@ void check_action() {
 			dump_srb_counter = 0;
 		}
 		
-	}	
+	}
+	
+	/* increase score after lower silo has opened */
+	if( game_score_counter > 0) {
+	
+		game_score_counter++;
+		if( game_score_counter == 7) {
+		
+			game_score = game_score + 1;
+			display_score( game_score );
+		}
+		if( game_score_counter == 13) {
+		
+			game_score = game_score + 1;
+			display_score( game_score );
+			game_score_counter = 0;
+		}
+		
+	}
 }
 
 
@@ -1586,6 +1585,7 @@ void init_game() {
 	/* score and level */
 	game_score = 0;
 	game_level = 1;
+	game_score_counter = 0;
 	
 	/* elevators */
 	elevator_left[0]  = TRUE; elevator_left[1]  = FALSE; elevator_left[2]  = FALSE; elevator_left[3]  = FALSE; elevator_left[4]  = FALSE; 
