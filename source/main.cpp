@@ -1623,7 +1623,8 @@ void init_game() {
 int main() {
 	
 	touchPosition touch;
-	
+	int selectscreen = 0;
+
     /* Turn on the 2D graphics core. */
     powerOn(POWER_ALL_2D);
 
@@ -1650,19 +1651,35 @@ int main() {
 		touchRead(&touch);
 		
 		/* display control screen */
-		if ( ( (touch.px>29) & (touch.px<112) ) & ( (touch.py>22) & (touch.py<85) ) ) displaycontrols_bg();
+		if ( ( (touch.px>29) & (touch.px<112) ) & ( (touch.py>22) & (touch.py<85) ) & (selectscreen!=1) ) 
+		{
+			selectscreen = 1;
+			displaycontrols_bg(); swiWaitForVBlank(); sleepwait(250000);
+			mmEffect( SFX_MOVEMARIO );
+		}
 		
 		/* display original screen */
-		if ( ( (touch.px>29) & (touch.px<112) ) & ( (touch.py>109) & (touch.py<171) ) ) displayoriginal_bg();
+		if ( ( (touch.px>29) & (touch.px<112) ) & ( (touch.py>109) & (touch.py<171) ) & (selectscreen!=2) ) 
+		{
+			selectscreen = 2;
+			displayoriginal_bg(); swiWaitForVBlank(); sleepwait(250000);
+			mmEffect( SFX_MOVEMARIO );
+		}
 		
 		/* display history screen */
-		if ( ( (touch.px>141) & (touch.px<225) ) & ( (touch.py>109) & (touch.py<171) ) ) displayhistory_bg();
+		if ( ( (touch.px>141) & (touch.px<225) ) & ( (touch.py>109) & (touch.py<171) ) & (selectscreen!=3) ) 
+		{
+			selectscreen = 3;
+			displayhistory_bg(); swiWaitForVBlank(); sleepwait(250000);
+			mmEffect( SFX_MOVEMARIO );
+		}
 		
 		/* play game */
 		if ( ( (touch.px>141) & (touch.px<225) ) & ( (touch.py>22) & (touch.py<85) ) ) {
 	
 			/* display backgrounds */
-			displayintro_bg(); displaygame_bg(); 
+			displayintro_bg(); displaygame_bg();
+			selectscreen = 4;
 			
 			/* initialize game */
 			init_game();
