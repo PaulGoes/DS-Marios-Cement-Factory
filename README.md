@@ -8,6 +8,9 @@ In 1984 I got my second ‘handheld’ console: the G&W Mario's Cement factory. 
 
 This is the result and I hope you like it.
 
+A video showing the game can be found on YouTube: 
+			[Nintendo DS Homebrew game Mario's Cement Factory](https://www.youtube.com/watch?v=8DIO8Cs6z6E).
+
 Some information:
 
 - Gameplay identical to the Game & Watch Mario's Cement Factory.
