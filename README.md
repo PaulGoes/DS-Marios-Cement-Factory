@@ -15,7 +15,7 @@ A video showing the game can be found on YouTube:
 A video showing the game can be found on YouTube:
 
 <a href="https://www.youtube.com/watch?v=8DIO8Cs6z6E">
-         <img src="https://img.youtube.com/vi/8DIO8Cs6z6E/0.jpg" style="width:70%;">
+         <img src="https://img.youtube.com/vi/8DIO8Cs6z6E/0.jpg" style="width:100%;">
       </a>
 
 
