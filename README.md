@@ -1,7 +1,7 @@
 ﻿# DS-Marios-Cement-Factory
 DS Homebrew Mario's Cement factory Game and Watch
 
-![DSDKJR](https://github.com/PaulGoes/DS-Marios-Cement-Factory/blob/master/media/MCFDS.jpg)
+![DSMCF](https://github.com/PaulGoes/DS-Marios-Cement-Factory/blob/master/media/MCFDS.jpg)
 
 ## INTRODUCTION
 
