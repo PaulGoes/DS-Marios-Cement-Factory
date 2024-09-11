@@ -1,8 +1,9 @@
 ﻿# DS-Marios-Cement-Factory
 DS Homebrew Mario's Cement factory Game and Watch
 
+![DSDKJR](https://github.com/PaulGoes/DS-Donkey-Kong-Jr/blob/master/media/DKJRDS.jpg)
 
-=== INTRODUCTION ===
+## INTRODUCTION
 
 In 1984 I got my second ‘handheld’ console: the G&W Mario's Cement factory. And now I programmed this version for the DS homebrew.
 
@@ -23,11 +24,12 @@ Some information:
 
 The game is created using devkitpro: 
 	https://devkitpro.org/. 
+ 
 Good introduction tutorials to using devkitpro and DS programming: 
-	https://patater.com/files/projects/manual/manual.html
+	https://patater.com/files/projects/manual/manual.html.
 
 
-=== HOW TO INSTALL AND START THE GAME USING THE DS WITH R4DS ===
+## HOW TO INSTALL AND START THE GAME USING THE DS WITH R4DS
 
 1) It is as simple as putting the mariocement.nds on the SD card.
 2) Put the SD card back in the R4DS card.
@@ -35,7 +37,7 @@ Good introduction tutorials to using devkitpro and DS programming:
 4) Start the Mario's Cement Factory homebrew application.
 
 
-=== FILE INFORMATION ===
+## FILE INFORMATION
 
 - Folder - audio: contains all the sounds.
 - Folder - build: used to build the game application.
