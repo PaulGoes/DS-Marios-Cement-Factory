@@ -12,6 +12,13 @@ This is the result and I hope you like it.
 A video showing the game can be found on YouTube: 
 			[Nintendo DS Homebrew game Mario's Cement Factory](https://www.youtube.com/watch?v=8DIO8Cs6z6E).
 
+A video showing the game can be found on YouTube:
+
+<a href="https://www.youtube.com/watch?v=8DIO8Cs6z6E">
+         <img src="https://img.youtube.com/vi/8DIO8Cs6z6E/0.jpg" style="width:70%;">
+      </a>
+
+
 Some information:
 
 - Gameplay identical to the Game & Watch Mario's Cement Factory.
