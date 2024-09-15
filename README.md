@@ -15,7 +15,7 @@ A video showing the game can be found on YouTube:
 A video showing the game can be found on YouTube:
 
 <a href="https://www.youtube.com/watch?v=8DIO8Cs6z6E">
-         <img src="https://img.youtube.com/vi/8DIO8Cs6z6E/0.jpg" style="width:100%;">
+         <img src="https://github.com/PaulGoes/DS-Marios-Cement-Factory/blob/master/media/DSMCF%20YouTube%20thumbnail.png" style="width:40%;">
       </a>
 
 
