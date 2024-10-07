@@ -36,15 +36,14 @@ Good introduction tutorials to using devkitpro and DS programming:
 	https://patater.com/files/projects/manual/manual.html.
 
 
-## HOW TO INSTALL AND START THE GAME USING THE DS WITH R4DS
+## HOW TO INSTALL AND START THE GAME USING A NINTENDO DS WITH R4DS
 
 1) It is as simple as putting the mariocement.nds on the SD card.
 2) Put the SD card back in the R4DS card.
 3) Put the R4DS card back in the Nintendo DS.
 4) Start the Mario's Cement Factory homebrew application.
 
-
-## FILE INFORMATION
+### FILE INFORMATION
 
 - Folder - audio: contains all the sounds.
 - Folder - build: used to build the game application.
@@ -56,3 +55,33 @@ Good introduction tutorials to using devkitpro and DS programming:
 - File - mariocement.pnproj: devkitpro project definition file.
 - File - icon.bmp: game icon image.
 - File - Makefile: devkitpro project make file.
+
+## HOW TO PLAY THE GAME IN AN EMULATOR
+
+The game can be played with the DeSmuME Nintendo DS emulator: [desmume.org](https://desmume.org/).
+
+The DeSmuME emulator is also a core in RetroArch so it is possible to play the game with RetroArch: [retroarch.com](https://www.retroarch.com/).
+
+In the emulator you need to place the 'Game & Watch Donkey Kong Jr.nds' rom in the appropriate rom-folder.
+
+> [!NOTE]
+> I'm not providing detailed information on how to download, setup and configure the emulators. This information changes often with new releases of the emulators. It is best to consult the emulator's official websites for more information.
+
+> [!TIP]
+> You might also need to provide the generic NDS BIOS files (bios7.bin, bios9.bin and firmware.bin) to the emulator.
+
+When you play the game with RetroArch, it is also possible to get [Retro Achievements](## HOW TO PLAY THE GAME IN AN EMULATOR
+
+The game can be played with the DeSmuME Nintendo DS emulator: [desmume.org](https://desmume.org/).
+
+The DeSmuME emulator is also a core in RetroArch so it is possible to play the game with RetroArch: [retroarch.com](https://www.retroarch.com/).
+
+In the emulator you need to place the 'Game & Watch Donkey Kong Jr.nds' rom in the appropriate rom-folder.
+
+> [!NOTE]
+> I'm not providing detailed information on how to download, setup and configure the emulators. This information changes often with new releases of the emulators. It is best to consult the emulator's official websites for more information.
+
+> [!TIP]
+> You might also need to provide the generic NDS BIOS files (bios7.bin, bios9.bin and firmware.bin) to the emulator.
+
+When you play the game with RetroArch, it is also possible to get [Retro Achievements](https://retroachievements.org/game/30911) for the game.
